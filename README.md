@@ -42,7 +42,7 @@ The _fingerprints_ folder of this repository contains a set of generated DDoS fi
 ### 2. Setting up MySQL
 For the storage of the DDoS fingerprints, we use MySQL instances at the domain teams. Below are the steps necessary to install, configure and run MySQL on your machine:
 1. [Install MySQL](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/) on your machine.
-2. Set up your MySQL instance. For this, create a database schema, tables to store your DDoS fingerprints and a user with remote access privileges to the created schema. The _init.sql_ file contains all commands necessary to set your MySQL instance up.
+2. Set up your MySQL instance. For this, create a database schema, tables to store your DDoS fingerprints and a user with remote access privileges to the created schema. The _init.sql_ file contains all commands necessary to set your MySQL instance up. Make sure to update the <username>, <password> and <remote_server_ip> in the _init.sql_ file according to your use case. 
 3. Allow remote MySQL connections: Open the mysqld.cnf file and change the bind address to be a wildcard entry `*`. On most Linux distributions, the file is located at _/etc/mysql/mysql.conf.d/mysqld.cnf_. If you have trouble editing the file, check out this [guide](https://phoenixnap.com/kb/mysql-remote-connection).
 5. Load the fingerprints into the database. The _feed.py_ file contains a python script that loads the DDoS fingerprints in the fingerprints directory into the database. Note that if you have created a different database user or a different schema than the ones provided by the _init.sql_ file, you have to adapt the _feed.py_ file accordingly. Also note that the script only searches for fingerprints in a directory called fingerprints in this repository.
 6. Once the fingerprints are stored in the database, check manually if they are available via the remote user. You can connect to the database by running the following command on a different machine:
@@ -67,10 +67,9 @@ We run Trino using docker with the [Trino docker image](https://hub.docker.com/r
   http-server.http.port=8080
   discovery.uri=http://example.net:8080
   ```
-
 -_node.properties_: Change the `node.id` field to be a unique ID inside your data mesh. You can generate an ID by running the `uuidgen` command. Also make sure that the `node.environment` is the same for all domain teams of your data mesh.
 
-The _catalog_ directory in the Trino configuration contains the data source of your domain teams. There, you can configure the access to the MySQL instances of your data mesh. For each domain team, create one _<domain_team_name>.properties_ file and specify the access credentials for the MySQL instance in the file. The example configuration provided here only contains one data source for the MySQL instance running on this machine that has been configured with the _init.sql_ file. Adapt this according to your needs
+- The _catalog_ directory in the Trino configuration contains the data source of your domain teams. There, you can configure the access to the MySQL instances of your data mesh. For each domain team, create one _<domain_team_name>.properties_ file and specify the access credentials for the MySQL instance in the file. The example configuration provided here only contains one data source for the MySQL instance running on this machine that has been configured with the _init.sql_ file. Adapt this according to your needs. Make sure to change the `connection-url` to the one you configured in the _init.sql_ file / when setting up your MySQL instance. 
 
 Once you have changed the configuration to match your use case, you can run Trino with the following command: 
 ```
