@@ -1,6 +1,6 @@
 CREATE SCHEMA domain_team_1_ddos_data;
 
-use domain_team_1_ddos_data;
+USE domain_team_1_ddos_data;
 
 CREATE TABLE Fingerprint ( 
   fingerprint_id VARCHAR(255) PRIMARY KEY NOT NULL, 
