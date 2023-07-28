@@ -25,6 +25,22 @@ In the thesis, we doployed the data mesh with three VMs acting as the domain tea
 
 On each domain team, we run MySQL instances to store the DDoS attack data. We use Trino as a distributed query engine that is able to query multiple, heterogenous, data sources simultaniously. This allows us to query DDoS attack data from multiple domain teams (data sources / MySQL instances) in a single SQL statement. Finally, we use Apache Superset as a data discovery and BI tool. We can run queries against the data mesh from inside Superset and directly use the data retrieved to create visualizations.
 
-Trino is deployed as a cluster. The cluster consists of at least one coordinator node and one or multiple worker nodes. Queries are sent to the coordinator node which analyzes and optimizes the query. The coordinator node then distributes the query across the available worker nodes. The worker nodes retrieve the data from the data sources and perform the computation of the query. The resulting data is then returned to the coordinator node, which returns the result to the client that submitted the query. In the design and implementation proposed in the thesis, we run one Trino coordinator node and two Trino worker nodes. 
+Trino is deployed as a cluster. The cluster consists of at least one coordinator node and one or multiple worker nodes. Queries are sent to the coordinator node which analyzes and optimizes the query. The coordinator node then distributes the query across the available worker nodes. The worker nodes retrieve the data from the data sources and perform the computation of the query. The resulting data is then returned to the coordinator node, which returns the result to the client that submitted the query. In the design and implementation proposed in the thesis, we run one Trino coordinator node and two Trino worker nodes. The below figure depicts the topology of the data mesh: 
+<p align="center">
+<img src="assets/ddos_data_mesh_impl.png" alt="ddos_data_mesh_impl" width="700", height="600"/>
+</p>
 
 ## Deployment
+This section explains how to install, configure and run the tools necessary for the DDoS Data Mesh Architecture. Note that this is the set up for a single domain team. You can replicate this process on every domain team that is part of the collaborative defense to create your own DDoS Data Mesh Network. 
+
+### 1. Prepare the Data
+asd
+
+### 2. Setting up MySQL
+asd
+
+### 3. Setting up Trino
+asd
+
+### 4. Setting up Superset
+asd
