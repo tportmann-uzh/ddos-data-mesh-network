@@ -34,13 +34,30 @@ Trino is deployed as a cluster. The cluster consists of at least one coordinator
 This section explains how to install, configure and run the tools necessary for the DDoS Data Mesh Architecture. Note that this is the set up for a single domain team. You can replicate this process on every domain team that is part of the collaborative defense to create your own DDoS Data Mesh Network. 
 
 ### 1. Prepare the Data
-asd
+Explain that we are working with samle data generated and located in forlder...
+Maybe cut, or distribute or only use a part of the prints in the table...
 
 ### 2. Setting up MySQL
-asd
+Install MySQL
+Set up MySQL schemas and Tables and users -> init.sql?
+Feed prints into MySQL with script
+Check if prints are in MySQL correctly...
+Check if MySQL is available on port... and with user ...
 
 ### 3. Setting up Trino
-asd
+Explain that we run Trino in a container -> Docker is a requirement
+Explain the folder with the configs -> Give explanation for each config file in bullet point style
+That folder/config is mounted into the container
+Explain how to run it -> Docker run ...
 
 ### 4. Setting up Superset
-asd
+We run with docker as well -> docker compose is a requirement
+cd into dir
+make changes for Trino Dirver
+then just do docker compose
+then configure DB connection to use Trino coord. node in Superset webapp settings. 
+
+## Data Discovery
+Once the hardware is running, you can query the mesh from Superset. Here is a video that shows this:
+Video...
+
