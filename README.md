@@ -67,7 +67,7 @@ We run Trino using docker with the [Trino docker image](https://hub.docker.com/r
   http-server.http.port=8080
   discovery.uri=http://example.net:8080
   ```
--_node.properties_: Change the `node.id` field to be a unique ID inside your data mesh. You can generate an ID by running the `uuidgen` command. Also make sure that the `node.environment` is the same for all domain teams of your data mesh.
+- _node.properties_: Change the `node.id` field to be a unique ID inside your data mesh. You can generate an ID by running the `uuidgen` command. Also make sure that the `node.environment` is the same for all domain teams of your data mesh.
 
 - The _catalog_ directory in the Trino configuration contains the data source of your domain teams. There, you can configure the access to the MySQL instances of your data mesh. For each domain team, create one _<domain_team_name>.properties_ file and specify the access credentials for the MySQL instance in the file. The example configuration provided here only contains one data source for the MySQL instance running on this machine that has been configured with the _init.sql_ file. Adapt this according to your needs. Make sure to change the `connection-url` to the one you configured in the _init.sql_ file / when setting up your MySQL instance. 
 
