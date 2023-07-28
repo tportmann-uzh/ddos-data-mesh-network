@@ -33,7 +33,7 @@ Trino is deployed as a cluster. The cluster consists of at least one coordinator
 ## Deployment
 This section explains how to install, configure and run the tools necessary for the DDoS Data Mesh Architecture. Note that this is the set up for a single domain team. You can replicate this process on every domain team that is part of the collaborative defense to create your own DDoS Data Mesh Network. Start by cloning this repository on your machine:
 ```
-git clone ...
+git clone https://github.com/tportmann-uzh/ddos-data-mesh-network.git
 ```
 
 ### 1. Prepare the Data
