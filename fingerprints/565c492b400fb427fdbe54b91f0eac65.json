@@ -1,0 +1,33 @@
+{
+  "attack_vectors": [
+    {
+      "service": null,
+      "protocol": "TCP",
+      "source_ips": [
+        "73.220.52.0"
+      ],
+      "source_ips_real": {
+        "73.220.52.0": "73.220.52.0"
+      },
+      "ttl": {
+        "64": 1.0
+      },
+      "ttl_by_source": {
+        "73.220.52.0": [
+          64
+        ]
+      },
+      "time_start": "1970-01-01T00:00:00.830043",
+      "duration_seconds": 30.824964,
+      "nr_packets_by_source": {
+        "73.220.52.0": 271930
+      },
+      "nr_packets": 271930,
+      "nr_megabytes": 61.32,
+      "detection_threshold": 0.17627722061133377
+    }
+  ],
+  "target": "75.220.18.45",
+  "location": "73.220.52.0",
+  "key": "565c492b400fb427fdbe54b91f0eac65"
+}
