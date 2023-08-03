@@ -77,7 +77,7 @@ docker run --name trino -d -p 8080:8080 --volume ./etc:/etc/trino trinodb/trino
 ```
 
 ### 4. Setting up Superset
-We also run Superset using docker. To run Superset, cd into the _superset_ directory and run the following command:
+We also run Superset using docker. Before we run Superset, make sure that Trino is available inside the superset containers. To do this, simply add a `.superset/docker/requirements-local.txt` and `trino` as a requirement. To run Superset, cd into the _superset_ directory and run the following command:
 ```
 sudo docker compose -f docker-compose-non-dev.yml up -d
 ```
